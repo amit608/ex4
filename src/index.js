@@ -1,6 +1,5 @@
 import { initialize, Endpoint, Self } from '@muzilator/sdk'
 
-const pattern = [60, 64, 67];
 const MidiEvents = [
   {
     "type": "note-on",
