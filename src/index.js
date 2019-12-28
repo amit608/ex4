@@ -59,12 +59,11 @@ const init = async () => {
   await platform.connectChannels(Self('sequence'), Endpoint('sequence-player', 'midi'))
   await platform.connectChannels(Endpoint('sequence-player', 'midi'), Endpoint('synth', 'midi'))
 
-  patternRecognition.postMessage({type: 'set-pattern', pattern: pattern});
   
-  // handle event when pattern recognized
+  // handle event when triplets recognized
   patternRecognition.addEventListener('message', message => {
     if (message.data.type === 'pattern-recognized') {
-      console.log('Pattern Recognized!');
+      console.log('Triplets Recognized!');
       // play DoMajor Twice with 1 second timeout between the iterations
       sequenceChannel.postMessage({type: 'play-pattern', sequence: MidiEvents})
       setTimeout(() => {sequenceChannel.postMessage({type: 'play-pattern', sequence: MidiEvents})}, 1000)
