@@ -46,9 +46,9 @@ const init = async () => {
   var sequenceChannel = await platform.createChannel('sequence')
 
   // load Controller, MIDI-Synth, Analyzer and Sequence Player.
-  await platform.loadLibrary('bubbles-vanilla-example', 'bubbles', 'primary')
+  await platform.loadLibrary('AmitEx4Cont', 'bubbles', 'primary')
   await platform.loadLibrary('midi-synth', 'synth')
-  await platform.loadLibrary('chord-analyzer', 'analyzer')
+  await platform.loadLibrary('AmitEx4Anlzr', 'analyzer')
   await platform.loadLibrary('sequence-player', 'sequence-player')
 
   // Connect Channels (see attached Diagram)
